@@ -1,0 +1,76 @@
+https://github.com/cprakash2118/DO280v418-14-oct2026
+
+Day 0 ops   -> Plan, design and implementation of the product (Product Deployment).
+Day 1/2 Ops -> DO280 & DO380 
+
+Point-1# What product?
+ 
+Product Name - "Red Hat OpenShift" 
+
+Product Editions:-
+1-) Cloud services editions
+ - Red Hat OpenShift Service on AWS      (ROSA)
+ - Microsoft Azure Red Hat OpenShift     (ARO)
+ - Red Hat OpenShift Dedicated           (Managed by RH, Deployed on GCP/AWS).
+ - Red Hat OpenShift on IBM Cloud        
+ 
+2-) Self-managed editions
+ - Red Hat OpenShift Virtualization Engine   (RHOVE-Add-ons)
+ - Red Hat OpenShift Kubernetes Engine        RHOVE's feature + (RHOKE-Base)
+ - Red Hat OpenShift Container Platform       RHOKE + (RHOCP-Standard) 
+ - Red Hat OpenShift Platform Plus            RHOCP + RHOPP 
+ 
+3-) Services & add-ons  (RHOKE/RHOCP).
+ - Red Hat OpenShift AI
+ - Red Hat OpenShift Lightspeed
+ - Red Hat OpenShift Virtualization
+ - Red Hat Quay
+ - Red Hat Advanced Cluster Management for Kubernetes
+ - Red Hat Advanced Cluster Security for Kubernetes
+ - Red Hat Advanced Developer Suite
+ - Red Hat OpenShift Consulting
+ 
+ MOving from RHOKE to RHOCP to RHOPP (More cluster-services added).
+ ODF - Enterprise Storage 
+ ACM - Multi CLuster 
+ ACS - Security for 
+ AI  - 
+ OVE - Default with all Product (RHOVE/RHOKE/RHOCP/RHOPP)
+  OpenSHift Virtualization (Kubernetes-Native Virtualization - based on KubeVirt)
+  
+  KubeVirt Based Virtualization:-
+  OpenSHift Virtualization
+  SUSE Virtualization
+  
+-----------------------------------
+Point-2# Classroom Setup:-
+ 1-) Users Details:-
+ 2-) Domain details:-
+ 3-) Servers/VMs details:-
+ 
+ 1-) Users Details:-
+     Login to Servers/VMs:-
+	  student/student   (sudo access)
+	  root/redhat       
+	  
+	 Login to Red Hat OpenSHift Cluster:-
+	  admin/redhatocp      (cluster-admin access; it's same as root access w.r.t Linux).
+	  developer/developer  (Basic User)
+	  FYI- Both "admin/developer" are LDAP accounts.
+	 
+	  kubeadmin/kubeadmin-password (1st account w.r.t Red Hat OpenSHift).
+	  
+	  $ oc login -u UserName -p Password API-URL 
+	  API URL - https://api.clusterName.baseDomain:6443 
+	  
+	  Example:
+	  $ oc login -u admin -p redhatocp https://api.ocp4.example.com:6443 
+	  
+	  
+	  Base Domain - citi.com 
+	  Cluster 
+	   - cluster-apac   API URL - https://api.cluster-apac.citi.com:6443 
+	   - cluster-emea   API URL - https://api.cluster-emea.citi.com:6443
+	   
+	  
+	  
