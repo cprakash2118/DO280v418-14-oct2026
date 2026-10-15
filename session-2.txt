@@ -1,0 +1,93 @@
+Point-2# Classroom Setup:-
+
+ 1-) Users Details:-
+ 2-) Domain details:-
+ 3-) Servers/VMs details:-
+ 
+ 1-) Users Details:-
+     Login to Servers/VMs:-
+	  student/student   (sudo access)
+	  root/redhat       
+	  
+	 Login to Red Hat OpenSHift Cluster:-
+	  admin/redhatocp      (cluster-admin access; it's same as root access w.r.t Linux).
+	  developer/developer  (Basic User)
+	  FYI- Both "admin/developer" are LDAP accounts.
+	 
+	  kubeadmin/kubeadmin-password (1st account w.r.t Red Hat OpenSHift).
+	  
+	  $ oc login -u UserName -p Password API-URL 
+	  API URL - https://api.clusterName.baseDomain:6443 
+	  
+	  Example:
+	  $ oc login -u admin -p redhatocp https://api.ocp4.example.com:6443 
+	  
+	  
+	  Base Domain - citi.com 
+	  Cluster 
+	   - cluster-apac   API URL - https://api.cluster-apac.citi.com:6443 
+	   - cluster-emea   API URL - https://api.cluster-emea.citi.com:6443
+-----------------------------------------------------------------
+Point-2# Classroom Setup:-
+
+ 1-) Users Details:-
+ 2-) Domain details:-
+ 3-) Servers/VMs details:-
+ 
+1-) Users Details:-
+    - Login to Servers/VMs.
+	  1) student/student  (sudo access) 
+	  2) root/redhat 
+	
+	- Login to OpenSHift Cluster.
+      1) admin/redhatocp       (cluster-admin access, same as root access w.r.t Linux)
+	  2) developer/developer   (basic login account to OpenSHift cluster).
+	  FYI- These are LDAP accounts 
+	  
+	  3) kubeadmin/kubeadmin-password-file [ssh utility ; cd ocp4/auth/{kubeconfig,kubeadmin-password}
+	     cat kubeadmin-password ; echo 
+		 kahdkjsdkjahuhj89273489 
+		 
+	  Example:-
+	  CLI Login to OpenSHift cluster.
+	   $ oc login -u userName -p password API-URL
+	   $ oc login -u admin -p redhatocp https://api.ocp4.example.com:6443 
+	   
+	   API URL - https://api.clusterName.baseDomain:6443 
+	   As per DO280/380 LAB.
+	   clusterName -> ocp4 
+	   baseDomain  -> example.com 
+	   Port Open   -> 6443 
+	   
+	  Web Console Login to OCP cluster.
+	  Using web browser - access Web Console for OCP cluster.
+	  Web Console URL 
+	  - https://appName-nsName.apps.clusterName.baseDomain
+	  - https://console-openshift-console.apps.clusterName.baseDomain
+	  
+	  appName -> console 
+	  nsName  -> openshift-console
+	  baseDomain -> example.com 
+	  clusterName -> ocp4 
+-------------------------------------------
+Red Hat Login ID (redhat.com & quay.io) - Same account will be used for quay.io also.
+Login to ROL - "RedHat Online Learning" Platform -
+- https://rol.redhat.com (Use your RHN ID).
+-------------------------------------------
+
+2-) Domain/Network details:-
+  
+     Network Name                        Domain Name                            IP Range(CIDR)
+     Classroom Network                  example.com                             172.25.252.0/24
+	 Student Network                    lab.example.com                         172.25.250.0/24
+	 Cluster Network                    ocp4.example.com                        192.168.50.0/24 
+	 
+3-) Servers/VMs
+  1-# classroom.example.com          [Proxy server - To connect to internet]
+  2-# workstation.lab.example.com    [Jump Server - Linux/Window/Mac ; As per DO280 - RHEL9.x + GUI]
+  3-# bastion.lab.example.com        [DNS; Act as router and connect Student Network to Classroom Network]
+  4-# utility.lab.example.com        [HAproxy,DHCP,Apache,NFS-Server etc, connect student to cluster network]
+  5-# registry.ocp4.example.com      [Image repo]
+      git.ocp4.example.com           [Git repo] 
+  6-# idm.ocp4.example.com           [LDAP server]
+  7-# master01.ocp4.example.com      [SNO - CP,Worker node] 
